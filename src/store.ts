@@ -1,7 +1,16 @@
-import { create } from "zustand";
+import { create } from 'zustand'
 
-type State = {};
+type State = {
+	isDark: boolean
+}
 
-type Actions = {};
+type Actions = {
+	setIsDark: () => void
+}
 
-export const useStore = create<State & Actions>((set) => ({}));
+export const useAppStore = create<State & Actions>(set => ({
+	isDark: false,
+	setIsDark: () => {
+		set(state => ({ isDark: !state.isDark }))
+	},
+}))

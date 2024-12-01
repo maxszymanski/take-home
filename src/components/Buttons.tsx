@@ -1,11 +1,13 @@
 import { FC } from 'react'
-import { XMarkIcon } from './icons'
+import { XMarkIcon } from './Icons'
 
 type ButtonProps = React.ComponentProps<'button'>
 
 export const ExpandButton: FC<ButtonProps> = ({ children, ...props }) => {
 	return (
-		<button className="hover:text-gray-700 transition-colors flex items-center justify-center" {...props}>
+		<button
+			className=" text-gray-800 dark:text-gray-200 hover:text-gray-400  transition-colors p-1 flex items-center justify-center"
+			{...props}>
 			{children}
 		</button>
 	)
@@ -13,7 +15,9 @@ export const ExpandButton: FC<ButtonProps> = ({ children, ...props }) => {
 
 export const DeleteButton: FC<Omit<ButtonProps, 'children'>> = props => {
 	return (
-		<button className="hover:text-gray-700 transition-colors flex items-center justify-center" {...props}>
+		<button
+			className=" text-red-500 hover:text-red-700 p-1  transition-colors flex items-center justify-center"
+			{...props}>
 			<XMarkIcon />
 		</button>
 	)
